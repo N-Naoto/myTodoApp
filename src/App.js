@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "./Form";
 import List from "./List";
 import shortid from "shortid";
+import "semantic-ui-css/semantic.min.css";
+import "./styles.css";
 
 const App = () => {
   // Formに入力した値をvalueに入れている
@@ -29,8 +31,6 @@ const App = () => {
       setValue("");
       setId(id);
     }
-    // setId("あああ");
-    // console.log(id);
   };
 
   //削除ボタンを押すと消える
@@ -40,14 +40,15 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const allDelelete = () => {
-    setTodos(todos.remove());
-  };
-
   return (
     <>
       <h1>練習用Todo App</h1>
-      <Form value={value} addTodo={addTodo} setValue={setValue} />
+      <Form
+        value={value}
+        addTodo={addTodo}
+        setValue={setValue}
+        setTodos={setTodos}
+      />
       <List todos={todos} deleteTodo={deleteTodo} />
     </>
   );

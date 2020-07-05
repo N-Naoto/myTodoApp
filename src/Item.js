@@ -16,8 +16,9 @@ const Item = ({ content, deleteTodo, id }) => {
           setIsDone(!isDone);
         }}
       />
-      <span style={{ textDecoration: isDone ? "line-through" : "none" }}>{content}</span>
-      <button onClick={handleDelete}>削除</button>
+      <span style={{ textDecoration: isDone ? "line-through" : "none" }}>
+        {content}
+      </span>
     </li>
   );
 };
