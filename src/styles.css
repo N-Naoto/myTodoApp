@@ -1,5 +1,7 @@
 body {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 ul {
   list-style: none;
@@ -7,4 +9,28 @@ ul {
 li {
   font-size: 20px;
   margin-top: 20px;
+  text-align: center;
+}
+
+li span {
+  margin-right: 10px;
+}
+
+#root {
+  width: 500px;
+  border: 2px double black;
+  padding: 30px;
+  /* height: auto; */
+}
+
+#root h1 {
+  text-align: center;
+}
+
+.wrap {
+  text-align: center;
+}
+
+form {
+  margin-right: 10px;
 }

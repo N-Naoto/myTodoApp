@@ -11,13 +11,15 @@ const Form = ({ value, setValue, addTodo, id, setTodos }) => {
   const handleAllDelete = () => {
     let YN = window.confirm("本当に全て消していいですか？");
     if (YN) setTodos([]);
+    setValue("");
+    console.log("全削除");
   };
 
   return (
-    <>
+    <div className="wrap">
       <form className="ui input" onSubmit={handleSubmit}>
-        <label>やることリスト</label>
         <input
+          placeholder="やることを記入して！"
           type="text"
           value={value}
           onChange={(e) => {
@@ -25,10 +27,8 @@ const Form = ({ value, setValue, addTodo, id, setTodos }) => {
           }}
         ></input>
       </form>
-      <button className="ui button" onClick={handleAllDelete}>
-        全削除
-      </button>
-    </>
+      <button className="ui button red" onClick={handleAllDelete}>全削除</button>
+    </div>
   );
 };
 

@@ -8,17 +8,19 @@ import "./styles.css";
 const App = () => {
   // Formに入力した値をvalueに入れている
   const [value, setValue] = useState("");
+
   const [todos, setTodos] = useState([
     { content: "風呂にする", id: shortid.generate() },
     { content: "ご飯にする", id: shortid.generate() },
     { content: "課題にする", id: shortid.generate() },
   ]);
+
   const [id, setId] = useState("初期値");
 
   // addTodo関数は実行されると項目が増える
   // そしてvalueの値が""になる
   const addTodo = (comment) => {
-    if (value === "") {
+    if (value.trim() === "") {
       alert("空です");
     } else {
       setTodos([
@@ -42,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <h1>練習用Todo App</h1>
+      <h1>Todo App</h1>
       <Form
         value={value}
         addTodo={addTodo}
